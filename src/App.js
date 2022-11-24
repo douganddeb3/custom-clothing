@@ -8,7 +8,7 @@ import Home from './routes/home/home.component';
 
 
 const Shop = () => {
-  return <h1>I and the shop page</h1>;
+  return <h1>This Is The Shop Page</h1>;
 }
 const App = () => {
   return(
