@@ -20,8 +20,9 @@ import{
     writeBatch,
     query,
     getDocs,
+    
 } from 'firebase/firestore';
-
+// removed QuerySnapshot,
 const firebaseConfig = {
     apiKey: "AIzaSyDLoydg6RWOeRHcGzb6ZC8TYzDB1Mw5dEM",
     authDomain: "custom-clothing-db-f20ea.firebaseapp.com",
@@ -65,12 +66,7 @@ const firebaseConfig = {
     const q = query(collectionRef);
 
     const querySnapShot = await getDocs(q);
-    const categoryMap = querySnapShot.docs.reduce((acc, docSnapShot) => {
-        const { title, items } = docSnapShot.data();
-        acc[title.toLowerCase()] = items;
-        return acc;
-    }, {});
-    return categoryMap;
+    return querySnapShot.docs.map((docSnapshot) => docSnapshot.data());
 
   };
 

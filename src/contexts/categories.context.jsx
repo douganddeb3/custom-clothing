@@ -1,38 +1,40 @@
-import {createContext, useState, useEffect} from 'react';
+// Everything migrated to Redux
 
-import { getCategoriesAndDocuments } from '../utils/firebase/firebase.utils';
+// import {createContext, useState, useEffect} from 'react';
 
-// import SHOP_DATA from '../shop-data.js';
-// eslint-disable-next-line 
-import { Firestore } from 'firebase/firestore';
+// import { getCategoriesAndDocuments } from '../utils/firebase/firebase.utils';
 
-export const CategoriesContext = createContext({
-    categoriesMap: {},
-});
+// // import SHOP_DATA from '../shop-data.js';
+// // eslint-disable-next-line 
+// import { Firestore } from 'firebase/firestore';
 
-export const CategoriesProvider = ({ children}) => {
+// export const CategoriesContext = createContext({
+//     categoriesMap: {},
+// });
 
-        const [categoriesMap, setCategoriesMap] = useState({});
+// export const CategoriesProvider = ({ children}) => {
 
-        useEffect(() => {
-            const getCategoriesMap = async () => {
-                const categoryMap = await getCategoriesAndDocuments();
-                console.log(categoryMap);
-                setCategoriesMap(categoryMap);
-            };
-            getCategoriesMap();
-        }, []);
+//         const [categoriesMap, setCategoriesMap] = useState({});
+
+//         useEffect(() => {
+//             const getCategoriesMap = async () => {
+//                 const categoryMap = await getCategoriesAndDocuments();
+//                 console.log(categoryMap);
+//                 setCategoriesMap(categoryMap);
+//             };
+//             getCategoriesMap();
+//         }, []);
         
-        // only had to run this useEffect
-        // to send data to Firestore, so now 
-        // it is commented out
-        // useEffect(() => {
-        //     addCollectionAndDocuments('categories', SHOP_DATA);
-        // },[]);
-        const value = {categoriesMap};
-        return(
-        <CategoriesContext.Provider value={value}> 
-            {children} 
-        </CategoriesContext.Provider>
-    );
-};
+//         // only had to run this useEffect
+//         // to send data to Firestore, so now 
+//         // it is commented out
+//         // useEffect(() => {
+//         //     addCollectionAndDocuments('categories', SHOP_DATA);
+//         // },[]);
+//         const value = {categoriesMap};
+//         return(
+//         <CategoriesContext.Provider value={value}> 
+//             {children} 
+//         </CategoriesContext.Provider>
+//     );
+// };
