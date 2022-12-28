@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { SpinnerContainer } from '../spinner/spinner.styles';
+
 export const BaseButton = styled.button`
   min-width: 165px;
   width: auto;
@@ -16,7 +18,10 @@ export const BaseButton = styled.button`
   border: none;
   cursor: pointer;
   display: flex;
+  // justify content does main axis, depends on flex direction
   justify-content: center;
+  // align items does secondary axis in this case vertically
+  align-items: center;
 
   &:hover {
     background-color: white;
@@ -46,5 +51,8 @@ export const InvertedButton = styled(BaseButton)`
     border: none;
   }
 `
-
-
+// overwrite the SpinnerContainer
+export const ButtonSpinner = styled(SpinnerContainer)`
+  width: 30px;
+  height: 30px;
+`;
