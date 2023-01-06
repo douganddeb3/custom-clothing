@@ -1,11 +1,20 @@
 import {createSelector} from 'reselect';
 
-const selectCategoryReducer = (state) => state.categories;
+import { RootState } from '../store';
+
+
+import { CategoriesState } from './category.reducer';
+
+import { CategoryMap } from './category.types';
+
+
+const selectCategoryReducer = (state: RootState): CategoriesState => state.categories;
 
 // memmoizes - store data as a key, and its value as the data
 // its all about storing to cache what has already been
 // looked up
 // this one checks if the categories(or docs in Firebase) change
+// this uses comma function, each element of array gets passed to categoriesSlice
 
 export const selectCategories = createSelector(
     [selectCategoryReducer],
@@ -20,12 +29,12 @@ export const selectCategories = createSelector(
 
 export const selectCategoriesMap = createSelector(
     [selectCategories],
-    (categories) =>
+    (categories): CategoryMap =>
         categories.reduce((acc, category) => {
         const { title, items } = category;
         acc[title.toLowerCase()] = items;
         return acc;
-}, {})
+}, {} as CategoryMap)
 );
 
 export const selectCategoriesIsLoading = createSelector(

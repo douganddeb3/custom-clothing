@@ -6,11 +6,19 @@ import {selectCategoriesIsLoading, selectCategoriesMap} from '../../store/catego
 
 import ProductCard from '../../components/product-card/product-card.component';
 import Spinner from '../../components/spinner/spinner.component';
-import './category.styles.scss';
+// import './category.styles.tsx';
 // import { connectFirestoreEmulator } from 'firebase/firestore';
+import { CategoryContainer, Title } from './category.styles';
+
+
+
+type CategoryRouteParams = {
+    category: string;
+};
+
 
 const Category = () => {
-    const { category } = useParams();
+    const { category } = useParams<keyof CategoryRouteParams>() as CategoryRouteParams;
     const categoriesMap = useSelector(selectCategoriesMap);
     const isLoading = useSelector(selectCategoriesIsLoading);
     const [products, setProducts] = useState(categoriesMap[category]);
@@ -22,15 +30,16 @@ const Category = () => {
 
     return(
         <Fragment>
-            <h2 className='category-title'>{category.toUpperCase()}</h2>
+            
+            <Title>{category.toUpperCase()}</Title>
             {
                 isLoading ? <Spinner />
                 :
-                <div className='category-container'>
+                <CategoryContainer>
                     {   products &&
                         products.map((product) => <ProductCard key={product.id} product={product} />)
                     }
-            </div> 
+            </CategoryContainer> 
             }
              
         </Fragment>
