@@ -1,7 +1,7 @@
 import { useState, FormEvent } from 'react';
 
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { StripeCardElement } from '@stripe/stripe.js';
+import { StripeCardElement } from '@stripe/stripe-js';
 
 import { useSelector } from 'react-redux';
 

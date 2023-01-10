@@ -14,9 +14,14 @@ import {store, persistor } from './store/store';
 import App from './App';
 // import {UserProvider} from './contexts/user.context';
 // import {CategoriesProvider} from './contexts/categories.context';
+
 import reportWebVitals from './reportWebVitals';
 // import {CartProvider} from './contexts/cart.context';
-import './index.scss';
+// import './index.scss';
+
+import { GlobalStyle} from './global.styles';
+
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +30,7 @@ root.render(
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
         <Elements stripe={stripePromise}>
+          <GlobalStyle />
           <App />
         </Elements >
         </BrowserRouter>
@@ -37,3 +43,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+serviceWorkerRegistration.register();

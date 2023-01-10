@@ -8,10 +8,18 @@
       margin-bottom: 25px;
       cursor: pointer;
     }
-  
+   
     .preview {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       column-gap: 20px;
-    }  
+      
+      @media screen and (max-width: 800px) {
+        padding: 10px 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2px;
+    } 
+    } 
+    
 }
