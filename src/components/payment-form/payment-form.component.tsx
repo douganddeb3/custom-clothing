@@ -1,4 +1,6 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect} from 'react';
+
+
 
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { StripeCardElement } from '@stripe/stripe-js';
@@ -21,9 +23,14 @@ const PaymentForm = () => {
     const currentUser = useSelector(selectCurrentUser);
     const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
+
+    
     const paymentHandler = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+
+
+        
         if(!stripe || !elements) {
             return;
         }
@@ -37,25 +44,26 @@ const PaymentForm = () => {
             // Stripe uses cents
             body: JSON.stringify({amount: amount * 100}),
             
-        }).then(res => res.json());
-        // res.json()
+        }).then((res) => res.json());
         
-        const {
-            paymentIntent: { client_secret},
-        } = response;
-
         const cardDetails = elements.getElement(CardElement);
-        if(!ifValidCardElement(cardDetails)) return;
 
+        if(!ifValidCardElement(cardDetails)) return;
+        const {paymentIntent: { client_secret} } = response;
+
+        // if(!cardDetails){
+        //     console.log("No card Details");
+        //     return;
+        // }
         const paymentResult = await stripe.confirmCardPayment(client_secret, {
             payment_method: {
                 card: cardDetails,
-                // card: elements.getElement(CardElement),
                 billing_details: {
                     name: currentUser ? currentUser.displayName : 'Guest',
-                }
-            }
+                },
+            },
         });
+        cardDetails.clear();
         setIsProcessingPayment(false);
         if(paymentResult.error) {
             alert(paymentResult.error);
@@ -64,8 +72,11 @@ const PaymentForm = () => {
                 alert('Payment Successful');
             }
         }
-
+  
     };
+    
+
+
     return(
         <PaymentFormContainer>
             <FormContainer onSubmit={ paymentHandler}>
@@ -75,6 +86,8 @@ const PaymentForm = () => {
             </FormContainer>
         </PaymentFormContainer>
     );
+
 };
+
 
 export default PaymentForm;

@@ -14,8 +14,9 @@ const Checkout = () => {
     // const { cartItems, cartTotal } = useContext(CartContext);
     const cartItems = useSelector(selectCartItems);
     const cartTotal = useSelector(selectCartTotal);
-
+    console.log("cart ITEMS ARE ", cartItems);
     return(
+        
         <div className='checkout-container'>
             <div className='checkout-header'>
                 <div className='header-block'>
@@ -43,8 +44,12 @@ const Checkout = () => {
                 }
                 <span className='total'>Total: ${cartTotal}</span>
                 <PaymentForm />
-            
+
+                
         </div>
+    
+        
+        
     );
 };
 
