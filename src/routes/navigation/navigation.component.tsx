@@ -32,6 +32,9 @@ const Navigation = () => {
                 <CrwnLogo className='logo'/>
             </LogoContainer>
             <NavLinks>
+                <NavLink to='/extras'>
+                    EXTRAS
+                </NavLink>
                 <NavLink to='/shop'>
                     SHOP
                 </NavLink>
