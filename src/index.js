@@ -22,18 +22,17 @@ import reportWebVitals from './reportWebVitals';
 import { GlobalStyle} from './global.styles';
 
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import {ApolloClient, ApolloProvider, HttpLink} from '@apollo/client';
-// InMemoryCache
+import {ApolloClient, ApolloProvider, HttpLink, InMemoryCache} from '@apollo/client';
 
 const client = new ApolloClient({
   link: new HttpLink({
     uri: 'https://crwn-clothing.com/',
+    cache: new InMemoryCache(),
     fetchOptions: {
-      mode: 'no-cors',
+      mode: 'cors',
     }  
     }),
 });
-// cache: new InMemoryCache(),
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
