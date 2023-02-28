@@ -22,18 +22,28 @@ import reportWebVitals from './reportWebVitals';
 import { GlobalStyle} from './global.styles';
 
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+
+const client = new ApolloClient({
+	uri: 'https://crwn-clothing.com/',
+	cache: new InMemoryCache(),
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter>
-        <Elements stripe={stripePromise}>
-          <GlobalStyle />
-          <App />
-        </Elements >
-        </BrowserRouter>
+        
+          <BrowserRouter>
+          <Elements stripe={stripePromise}>
+            <GlobalStyle />
+              <ApolloProvider client={client}>
+                <App />
+              </ApolloProvider>
+          </Elements >
+          </BrowserRouter>
+        
       </PersistGate>
     </Provider>
   </React.StrictMode>

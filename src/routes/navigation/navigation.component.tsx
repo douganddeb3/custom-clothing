@@ -32,11 +32,12 @@ const Navigation = () => {
                 <CrwnLogo className='logo'/>
             </LogoContainer>
             <NavLinks>
-                <NavLink to='/extras'>
-                    EXTRAS
-                </NavLink>
+                
                 <NavLink to='/shop'>
                     SHOP
+                </NavLink>
+                <NavLink to='/extras'>
+                    EXTRAS
                 </NavLink>
                 {
                     currentUser ? (
