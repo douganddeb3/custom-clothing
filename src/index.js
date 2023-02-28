@@ -27,6 +27,9 @@ import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 const client = new ApolloClient({
 	uri: 'https://crwn-clothing.com/',
 	cache: new InMemoryCache(),
+  fetchOptions: {
+    mode: 'no-cors',
+  },
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
