@@ -22,7 +22,8 @@ import reportWebVitals from './reportWebVitals';
 import { GlobalStyle} from './global.styles';
 
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import {ApolloClient, InMemoryCache, ApolloProvider, HttpLink} from '@apollo/client';
+import {ApolloClient, ApolloProvider, HttpLink} from '@apollo/client';
+// InMemoryCache
 
 const client = new ApolloClient({
   link: new HttpLink({
