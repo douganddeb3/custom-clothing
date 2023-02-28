@@ -22,7 +22,7 @@ const Extras = () => {
     
         const {loading, error, data } = useQuery(COLLECTIONS);
         
-    
+    console.log("ERROR: ",error);
     console.log("Reload ", data );
     console.log("load ",loading );
         
