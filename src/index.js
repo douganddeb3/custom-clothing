@@ -25,13 +25,11 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import {ApolloClient, ApolloProvider, HttpLink, InMemoryCache} from '@apollo/client';
 
 const client = new ApolloClient({
-  link: new HttpLink({
     uri: 'https://crwn-clothing.com/',
     cache: new InMemoryCache(),
-    fetchOptions: {
-      mode: 'cors',
-    }  
-    }),
+    headers: {
+      'Access-Control-Allow-Origin':'*',
+    }
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
