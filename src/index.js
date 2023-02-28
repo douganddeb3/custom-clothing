@@ -22,7 +22,7 @@ import reportWebVitals from './reportWebVitals';
 import { GlobalStyle} from './global.styles';
 
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import {ApolloClient, ApolloProvider, HttpLink, InMemoryCache} from '@apollo/client';
+import {ApolloClient, ApolloProvider, InMemoryCache} from '@apollo/client';
 
 const client = new ApolloClient({
     uri: 'https://crwn-clothing.com/',
