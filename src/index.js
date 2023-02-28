@@ -27,12 +27,12 @@ import {ApolloClient, InMemoryCache, ApolloProvider, HttpLink} from '@apollo/cli
 const client = new ApolloClient({
   link: new HttpLink({
     uri: 'https://crwn-clothing.com/',
-    cache: new InMemoryCache(),
     fetchOptions: {
       mode: 'no-cors',
     }  
     }),
 });
+// cache: new InMemoryCache(),
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
