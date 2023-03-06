@@ -5,6 +5,6 @@
   force = true
   headers = {
     X-From = "Netlify"
-    Access-Control-Allow-Origin: "https://gleeful-mandazi-e6b5a7.netlify.app/extras",
-    Access-Control-Allow-Methods: GET, DELETE, HEAD, OPTIONS
+    Origin: "https://gleeful-mandazi-e6b5a7.netlify.app/extras",
+    Access-Control-Request-Method: GET, OPTIONS
     }
