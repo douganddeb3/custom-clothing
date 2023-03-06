@@ -76,6 +76,5 @@
   "devDependencies": {
     "@types/node": "^18.11.18",
     "@types/redux-logger": "^3.0.9"
-  },
-  "proxy": "https://gleeful-mandazi-e6b5a7.netlify.app/extras"
+  }
 }
