@@ -3,4 +3,8 @@
   to = "https://crwn-clothing.com/"
   status = 200
   force = true
-  headers = {X-From = "Netlify"}
+  headers = {
+    X-From = "Netlify"
+    Access-Control-Allow-Origin: "https://gleeful-mandazi-e6b5a7.netlify.app/extras",
+    Access-Control-Allow-Methods: GET, DELETE, HEAD, OPTIONS
+    }
