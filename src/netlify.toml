@@ -1,3 +1,6 @@
-[[headers]]
- for = "/*"
-   Access-Control-Allow-Origin: "*"
+[[redirects]]
+  from = "/extras"
+  to = "https://crwn-clothing.com"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
