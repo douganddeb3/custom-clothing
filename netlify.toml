@@ -1,4 +1,3 @@
 [[headers]]
  for = "/*"
- [headers.value]
    Access-Control-Allow-Origin: "*"
