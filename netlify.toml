@@ -1,8 +1,13 @@
 # The following redirect is intended for use with most SPAs that handle
 # routing internally.
 [[redirects]]
-  from = “/extras/https://crwn-clothing.com/”
+  from = “/extras”
   to = “https://crwn-clothing.com/"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200
 
 [[headers]]
