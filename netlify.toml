@@ -1,12 +1,12 @@
 
 [[redirects]]
-  from = “/extras”
-  to = “https://crwn-clothing.com/"
+  from = “/extras”,
+  to = “https://crwn-clothing.com/",
   status = 200
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/*",
+  to = "/index.html",
   status = 200
 
 [[headers]]
