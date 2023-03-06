@@ -76,5 +76,6 @@
   "devDependencies": {
     "@types/node": "^18.11.18",
     "@types/redux-logger": "^3.0.9"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }
