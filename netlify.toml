@@ -1,15 +1,10 @@
-
 [[redirects]]
   from = “/extras”,
   to = “https://crwn-clothing.com/",
   status = 200
 
 [[redirects]]
-  from = "/*",
+  from = "/",
   to = "/index.html",
   status = 200
 
-[[headers]]
-  for = "/*"
-    [headers.values]
-    Access-Control-Allow-Origin = "*"
