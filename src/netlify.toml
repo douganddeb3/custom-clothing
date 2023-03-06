@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/extras"
-  to = "https://crwn-clothing.com"
+  from = "/extras/"
+  to = "https://crwn-clothing.com/"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
