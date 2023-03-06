@@ -35,20 +35,21 @@ const client = new ApolloClient({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+  <ApolloProvider client={client}>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         
           <BrowserRouter>
           <Elements stripe={stripePromise}>
             <GlobalStyle />
-              <ApolloProvider client={client}>
                 <App />
-              </ApolloProvider>
+              
           </Elements >
           </BrowserRouter>
         
       </PersistGate>
     </Provider>
+    </ApolloProvider>
   </React.StrictMode>
 );
 

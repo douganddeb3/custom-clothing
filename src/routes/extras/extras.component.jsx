@@ -48,7 +48,7 @@ return(
         <aside>
         <h1>Extras</h1>
         <p>
-            Some code here
+            <code>Some code here</code>
         </p>
         </aside>
         <div>

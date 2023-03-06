@@ -37,7 +37,7 @@ const Navigation = () => {
                     SHOP
                 </NavLink>
                 <NavLink to='/extras'>
-                    EXTRAS
+                    useQuery
                 </NavLink>
                 {
                     currentUser ? (
