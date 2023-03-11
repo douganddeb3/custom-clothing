@@ -10,7 +10,7 @@
   Host = "crwn-clothing.com"
   Origin = "https://gleeful-mandazi-e6b5a7.netlify.app"
   Referer = "https://gleeful-mandazi-e6b5a7.netlify.app/"
-  sec-ch-ua = "Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"
+  sec-ch-ua = "Google Chrome"
   sec-ch-ua-mobile = "?0"
   sec-ch-ua-platform = "macOS"
   Sec-Fetch-Dest = "empty"
