@@ -1,5 +1,2 @@
 [[headers]]
- for = "/*"
- [headers.value]
-  accept = "*/*"
-  mode= "cors"
+  mode = "no-cors"
