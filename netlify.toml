@@ -2,4 +2,4 @@
  for = "/*"
  [headers.value]
    Access-Control-Allow-Origin = "*"
-
+   Referrer-Policy = "no-referrer-when-downgrade"
