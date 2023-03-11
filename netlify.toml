@@ -1,12 +1,12 @@
 [[headers]]
  for = "/*"
  [headers.value]
-  accept: */*
-  Accept-Encoding: gzip, deflate, br
-  Accept-Language: en-US,en;q=0.9
-  Connection: keep-alive
-  Content-Length: 154
-  content-type: application/json
+  accept = "*/*"
+  Accept-Encoding = "gzip, deflate, br"
+  Accept-Language = "en-US,en;q=0.9"
+  Connection = "keep-alive"
+  Content-Length = "154"
+  content-type = "application/json"
   Host = "crwn-clothing.com"
   Origin = "https://gleeful-mandazi-e6b5a7.netlify.app"
   Referer = "https://gleeful-mandazi-e6b5a7.netlify.app/"
