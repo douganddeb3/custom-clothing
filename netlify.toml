@@ -7,7 +7,7 @@
   Connection: keep-alive
   Content-Length: 154
   content-type: application/json
-  Host: crwn-clothing.com
+  Host = "crwn-clothing.com"
   Origin = "https://gleeful-mandazi-e6b5a7.netlify.app"
   Referer = "https://gleeful-mandazi-e6b5a7.netlify.app/"
   sec-ch-ua = "Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"
@@ -17,4 +17,3 @@
   Sec-Fetch-Mode = "cors"
   Sec-Fetch-Site ="cross-site"
   User-Agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"   
-  
