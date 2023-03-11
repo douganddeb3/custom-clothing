@@ -3,3 +3,5 @@
  [headers.value]
    Access-Control-Allow-Origin = "*"
    Referrer-Policy = "no-referrer-when-downgrade"
+   Access-Control-Allow-Methods = "GET, POST, OPTION"
+   Content-Type = "application/json"
