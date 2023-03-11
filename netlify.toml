@@ -1,2 +1,4 @@
 [[headers]]
-  mode = "no-cors"
+  [headers.value]
+    for = "/*"
+    mode = "no-cors"
