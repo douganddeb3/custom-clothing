@@ -23,7 +23,6 @@ const fetcher = () => {
     return fetch('https://api.github.com/repos/tannerlinsley/react-query').then(res => res.json());
  }
 
-     // return fetch('https://crwn-clothing.com').then(res => res.json());
       
 const Extras = () => {
     const { isLoading, error, data } = useQuery('repoData', fetcher);
@@ -64,6 +63,8 @@ return(
         <p>
             <em><strong>Try useQuery to hit an API in your React App</strong></em>
             <ol>
+                <li>npm install 'react-query'</li>
+
                 <li>In index.js: 
                     <ul>
                         <li>import &#123; QueryClient, QueryClientProvider &#125; from 'react-query';</li>
@@ -84,7 +85,7 @@ return(
                         </li>
                     
                         <li>
-                             Use these 3 variable in your code. Eg. &#60;h1&#62; data.name &#60;/h1&#62;
+                             Use these the variables returned in your code. Eg. &#60;h1&#62; data.name &#60;/h1&#62;
                         </li>
                     </ul>
                 </li>
