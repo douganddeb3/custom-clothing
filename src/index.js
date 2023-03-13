@@ -1,3 +1,6 @@
+// the index.js without apollo:
+
+
 import React from 'react';
 // import { render } from 'react-dom';
 import ReactDOM from 'react-dom/client';
@@ -22,31 +25,37 @@ import reportWebVitals from './reportWebVitals';
 import { GlobalStyle} from './global.styles';
 
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import {ApolloClient, ApolloProvider, InMemoryCache} from '@apollo/client';
+// import {ApolloClient, ApolloProvider, InMemoryCache} from '@apollo/client';
 
-const client = new ApolloClient({
-    uri: 'https://crwn-clothing.com/',
-    cache: new InMemoryCache(),
-});
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+// const client = new ApolloClient({
+//   uri: 'https://crwn-clothing.com/',
+//   cache: new InMemoryCache(),
+  
+// });
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <ApolloProvider client={client}>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        
-          <BrowserRouter>
-          <Elements stripe={stripePromise}>
-            <GlobalStyle />
-                <App />
-              
-          </Elements >
-          </BrowserRouter>
-        
-      </PersistGate>
-    </Provider>
-    </ApolloProvider>
+    <QueryClientProvider client={queryClient}>
+    {/* <ApolloProvider client={client}> */}
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          
+            <BrowserRouter>
+            <Elements stripe={stripePromise}>
+              <GlobalStyle />
+                  <App />
+                
+            </Elements >
+            </BrowserRouter>
+          
+        </PersistGate>
+      </Provider>
+    {/* </ApolloProvider> */}
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
@@ -55,3 +64,7 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 serviceWorkerRegistration.register();
+
+
+
+
